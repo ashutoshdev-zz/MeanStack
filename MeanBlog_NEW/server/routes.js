@@ -27,8 +27,8 @@ var express = require('express'),
 
 
         aws.config.update({
-    secretAccessKey: 'X56Bws/kR3DieAlQlR5d3rGk5kIal7QDRNQGQi1h',
-    accessKeyId: 'AKIAI7LSYS5YVXUBOBPA'
+    secretAccessKey: 'X56Bws/kRhgh3DieAlQlR5d3rGk5kIal7QDRNQGQi1h',
+    accessKeyId: 'AKIAI7LghghgSYS5YVXUBOBPA'
 });
 
 var s3 = new aws.S3({endpoint: 'https://s3.eu-central-1.amazonaws.com',
@@ -109,7 +109,7 @@ module.exports = function(app, passport) {
                 }
             }
             var sitemap = sm.createSitemap({
-                hostname: 'https://futureworktechnologies.com',
+                hostname: 'https://readyourlessons.com',
                 cacheTime: 600000, // 600 sec - cache purge period 
                 urls: pageUrls
             });
@@ -136,7 +136,7 @@ module.exports = function(app, passport) {
                 }
             }
             var sitemap = sm.createSitemap({
-                hostname: 'https://futureworktechnologies.com',
+                hostname: 'https://readyourlessons.com',
                 cacheTime: 600000, // 600 sec - cache purge period 
                 urls: pageUrls
             });
@@ -157,90 +157,6 @@ module.exports = function(app, passport) {
      router.get('/contact',function(req, res) {
 
 
-        // Generate test SMTP service account from ethereal.email
-// Only needed if you don't have a real mail account for testing
-//nodemailer.createTestAccount((err, account) => {
-    
-        // create reusable transporter object using the default SMTP transport
-        // let transporter = nodemailer.createTransport({
-        //     host: 'smtp.ethereal.email',
-        //     port: 587,
-        //     secure: false, // true for 465, false for other ports
-        //     auth: {
-        //         user: account.user, // generated ethereal user
-        //         pass: account.pass  // generated ethereal password
-        //     }
-        // });
-        // let transporter = nodemailer.createTransport({
-        //     host: 'email-smtp.eu-west-1.amazonaws.com',
-        //     port: 587,
-        //     secure: false, // upgrade later with STARTTLS
-        //     auth: {
-        //         user: 'AKIAJRZZS6WH7BZOBIMA',
-        //         pass: 'AqACIIcfGwHLQr+fzT2kbayinQdjmQgZgoWtMdvOkE5t'
-        //     }
-        // });
-        
-        // let smtpConfig = {
-        //     host: 'email-smtp.eu-west-1.amazonaws.com',
-        //     port: 587,
-        //     secure: false, // upgrade later with STARTTLS
-        //     auth: {
-        //         user: 'AKIAJRZZS6WH7BZOBIMA',
-        //         pass: 'AqACIIcfGwHLQr+fzT2kbayinQdjmQgZgoWtMdvOkE5t'
-        //     }
-        // };
-    
-        // setup email data with unicode symbols
-        // let mailOptions = {
-        //     from: '"simerjit@avainfotech.com', // sender address
-        //     to: 'anurag@avainfotech.com, ashutosh@avainfotech.com', // list of receivers
-        //     subject: 'Hello ✔', // Subject line
-        //     text: 'Hello world?', // plain text body
-        //     html: '<b>Hello world?</b>' // html body
-        // };
-    
-        // // send mail with defined transport object
-        // transporter.sendMail(mailOptions, (error, info) => {
-        //     if (error) {
-        //         return console.log(error);
-        //     }
-        //     console.log('Message sent: %s', info.messageId);
-        //     // Preview only available when sending through an Ethereal account
-        //     console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-    
-        //     // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@blurdybloop.com>
-        //     // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
-        // });
-    //});
-
-
-
-        // let smtpConfig = {
-        //     host: 'email-smtp.eu-west-1.amazonaws.com',
-        //     port: 587,
-        //     secure: false, // upgrade later with STARTTLS
-        //     auth: {
-        //         user: 'AKIAJRZZS6WH7BZOBIMA',
-        //         pass: 'AqACIIcfGwHLQr+fzT2kbayinQdjmQgZgoWtMdvOkE5t'
-        //     }
-        // };
-        // transporter.verify(function(error, success) {
-        //     if (error) {
-        //          console.log(error);
-        //     } else {
-        //          console.log('Server is ready to take our messages');
-        //     }
-        //  });
-
-        // var output = transporter.sendMail({
-        //     from: 'anurag@avainfotech.com',
-        //     to: 'simerjit@avainfotech.com',
-        //     subject: 'Message from Anurag',
-        //     text: 'Test mail from nodejs'
-        // });
-        // console.log(output)
-        // console.log('simer')
         res.render('home/contact');
     });
     
@@ -308,7 +224,7 @@ module.exports = function(app, passport) {
                 if (post) {
                    // console.log(post.paramal);
                     metaTags.metaTagsTitle = post.title; //title
-                    metaTags.metaTagsUrl =  'https://futureworktechnologies.com/'+post.paramal;
+                    metaTags.metaTagsUrl =  'https://readyourlessons.com/'+post.paramal;
                     metaTags.metaDescription = post.metadescription;
                     metaTags.metaTagsKeyWords = post.metakeywords;
                     res.render('home/post', metaTags);
@@ -326,7 +242,7 @@ module.exports = function(app, passport) {
     });
 };
 function isAdmin(req, res, next) {
-    if (req.isAuthenticated() && req.user.email === 'ashutosh@avainfotech.com') {
+    if (req.isAuthenticated() && req.user.email === 'ashutosh2432@gnail.com') {
         console.log('cool you are an admin, carry on your way');
         next();
     } else {
