@@ -23,8 +23,8 @@ var transporter = nodemailer.createTransport({
     host: 'email-smtp.us-west-2.amazonaws.com',
     port: 587,
     auth: {
-        user: "AKIAJM5AVNB4IHHHUZCQ",
-        pass: "At7QdmRYHSZe0YQGFcMi/PBpzkjehGfshPmW/kncioGB"
+        user: "AKIAJM5AVNfbdB4IHHHUZCQ",
+        pass: "At7QdmRYHSZeghg0YQGFcMi/PghgfhBpzkjehGfshPmW/kncioGB"
     }
 });
 
@@ -35,8 +35,8 @@ var mailOptions = {
     text: 'That was easy!'
 };
 aws.config.update({
-    secretAccessKey: 'X56Bws/kR3DieAlQlR5d3rGk5kIal7QDRNQGQi1h',
-    accessKeyId: 'AKIAI7LSYS5YVXUBOBPA'
+    secretAccessKey: 'X56Bws/kR3DieAlQlR5d3rGkghgh5kIal7QDRNQGQi1h',
+    accessKeyId: 'AKIAI7LSghgYS5YVXUBOBPA'
 });
 
 var s3 = new aws.S3({endpoint: 'https://s3.eu-central-1.amazonaws.com',
