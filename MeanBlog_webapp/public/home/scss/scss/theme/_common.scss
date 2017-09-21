@@ -1,0 +1,24 @@
+*{
+	margin:0px;
+	padding:0px;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	box-sizing:border-box;
+}
+body{
+	
+	font-family: $primary-font;
+
+}
+h1, h2, h3, h4, h5, h6{
+	font-family: $primary-font;
+}
+
+p{
+	
+	font-family: $primary-font;
+	color: $font-color;
+	
+}

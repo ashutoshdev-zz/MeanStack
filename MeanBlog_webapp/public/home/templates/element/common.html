@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="navbg" >
+        <nav class="navbar navbar-default navbar-fixed st-menu ">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                    <a class="navbar-brand" href="/"><img src="home/scss/images/logo.png" alt="Logo"></a> </div>
+
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/triplist" > Where to next?</a></li>
+                        <li><a href="#" ng-click="tripPopUp()"> Create a Trip</a></li>               
+                        <li class="active">
+                            <a href="#"  class="lft-menu" data-toggle="modal" ng-click="openNav()">                  
+                                <img src="home/scss/images/menu-icon.png" alt="" >
+                            </a>
+                        </li>
+                        <div id="mySidenav" class="sidenav">                
+
+                            <ul>
+                                <li> <a href="/home"><div class="profileimg1"> <img src="{{currentUser.profilepic}}" ng-show="currentUser.profilepic">  </div>   Profile</a> </li>
+                                <li>  <a href="#"> <i class="fa fa-suitcase" aria-hidden="true"></i>  My Trips</a> </li>
+                                <li ng-click="dropNav()">  <a href="#"> <i class="fa fa-cog" aria-hidden="true"></i> Setting</a> 
+                                    <ul class="editprofile" id="editprofile1" style="height: 0;"  >
+                                        <li> <a href="/home/#/edit"> <i class="fa fa-edit" aria-hidden="true"></i> Edit Profile</a> </li>
+                                        <li><a href="#"> <i class="fa fa-unlock-alt" aria-hidden="true"></i> Change Password </a> </li>
+                                    </ul>
+                                </li>
+                                <li>   <a href="/home/logout"> <i class="fa fa-sign-out" aria-hidden="true"></i> Sign Out</a></li>
+
+
+
+
+
+                            </ul>
+                            <div class="btnbox"> <a href="#"> Contact </a> </div>
+                            <div class="iconbox1">  
+                                <ul class="mainlist"> 
+                                    <li> <a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i> </a> </li>
+                                    <li> <a href="#"> <i class="fa fa-linkedin" aria-hidden="true"></i> </i> </a> </li>
+                                    <li> <a href="#"> <i class="fa fa-github" aria-hidden="true"></i> </a> </li>
+                                    <li> <a href="#"> <i class="fa fa-facebook" aria-hidden="true"></i></a> </li>
+                                    <li> <a href="#"> <i class="fa fa-twitter" aria-hidden="true"></i> </i> </a> </li>
+                                    <li> <a href="#"> <i class="fa fa-pinterest" aria-hidden="true"></i> </a> </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="trm"> <p> Terms & Privacy | &copy; 2017. SLUGr, Inc, All rights reserved.  </p> </div>
+
+                        </div>
+                    </ul>
+                </div>              
+
+            </div>
+    </div>
+</nav>      
+</div>
+</div>

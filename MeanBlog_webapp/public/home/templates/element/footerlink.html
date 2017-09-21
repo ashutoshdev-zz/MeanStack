@@ -1,0 +1,45 @@
+<div class="col-sm-4">
+                            <div class="link_footer">
+                                <ul>
+                                   
+                                    <li><a href="/whoweare">Who we are</a></li>
+                                    <li><a href="/contact">Contact Us</a></li>
+                                    <li><a href="/blog">Blog</a></li>
+                                    <li><a href="#slugrwork">How Slugr Works</a></li>
+                                    <li><a href="/faq">FAQs </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="sociomedia-footer">
+                                <ul>
+                                    <li>Follow us</li>
+                                    <li><a href="https://www.facebook.com/theslugr" target="_blank"><img src="../home/scss/images/fb-icon.png"></a></li>
+<!--                                    <li><a href="https://in.linkedin.com" target="_blank"><img src="../home/scss/images/linkedin-icon.png"></a></li>-->
+                                    <li><a href="https://twitter.com/theslugr" target="_blank"><img src="../home/scss/images/twitter-icon.png"></a></li>
+                                    <li><a href="https://www.youtube.com/channel/UCmQa_LNCr2MhKAbWRS3s0rw" target="_blank"><img src="../home/scss/images/youtube-icon.png"></a></li>
+                                    <li><a href="https://www.instagram.com/theslugr_" target="_blank"><img src="../home/scss/images/instagram.png"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+<div id="createtrip" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-login">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <h1>Who you are?</h1>
+        <span>POST A TRIP</span>
+        <form class="login" ng-submit="tra_tour(TraTour)">
+             <div class="form-group">        
+          <ul>
+            <li> <input type="radio" class="form-control" ng-model='TraTour.traveller' value="traveller" name="traveller"> <span>TRAVELLER </span> </li>
+            <li> <input type="radio" class="form-control" ng-model='TraTour.traveller' value="tourguide" name="traveller"> <span>TOUR GUIDE/ TRAVEL AGENCY </span></li>
+          </ul>
+          <br /><input type="submit" value="SUBMIT" class="btn defult_btn contin-log" name="submit">
+        </div>   
+      </form> 
+      </div>     
+    </div>
+  </div>
+</div>

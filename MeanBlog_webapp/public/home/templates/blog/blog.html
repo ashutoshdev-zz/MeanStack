@@ -1,0 +1,59 @@
+<!-- Header Section End Here --> 
+
+<!--  Section End Here -->
+<section class="inner-bg">
+    <div class="smart-container">
+        <div class="container">
+            <div class="col-sm-12">
+                <div class="heading">
+                    <h1>Blog<span></span><h1>        
+                            </div>
+                            </div>
+
+
+
+                            <div class="container">
+                                <div class="all-post">
+                                    <div class="row">
+
+                                        <div class="container">
+                                            <div class="row">
+
+
+
+                                                <div align="center">
+                                                    <button class="btn btn-default filter-button" data-filter="all">All</button>
+                                                    <span ng-repeat="(k,cat) in catlist">
+                                                        <button class="btn btn-default filter-button" data-filter="{{cat.name}}" >{{cat.name}}</button>
+                                                    </span>
+                                                </div>
+                                                <br/>
+                                                <span ng-repeat="(k,pst) in postlist">
+                                                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter {{pst.category}}">                
+                                                    <div class="single-blog-item">
+                                                        <div class="blog-thumnail">
+                                                            <a href="{{pst.paramal}}"><img src="{{pst.postimg}}" alt="blog-img"></a>
+                                                        </div>
+                                                        <div class="blog-content">
+                                                            <h4>{{pst.title}}</h4>
+                                                             <img src="images/arrow.png">
+                                                            <p>{{pst.description.substr(0, 70)}}</p>
+                                                            <a href="{{pst.paramal}}" class="more-btn">View More</a>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                </div>
+                                             </span>   
+                                            </div>
+                                        </div>
+                                        </section>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            </div>
+                            </div>
+                            </section>

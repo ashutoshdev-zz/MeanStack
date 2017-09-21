@@ -1,0 +1,52 @@
+<section class="inner-bg" ng-controller="PostCtrl">
+    <div class="smart-container">
+        <div class="container">
+
+            <div class="row">
+                <div class="blog_detail_main">
+                    <div class="blog_detail">
+<div class="col-md-6">
+              <div class="left_content">
+                  
+                  <div class="slider01">
+                   <img src="{{postimg}}">
+                  </div>
+
+              </div>
+              </div>
+
+<div class="col-md-6">
+                        <h2>{{title}}</h2>
+                        <ul>
+                            <li>by admin,</li>
+                            <li><i class="fa fa-envelope"></i>{{created_at | date}}</li>
+                           
+                        </ul>
+
+                        <p> {{description}}</p>
+</div>
+                       
+                    </div>
+                </div>
+
+                <div class="blog_detail_main1" style="display: none">
+                    <span>We offer for you</span>
+                    <h2>Leave A Reply</h2>
+
+                    <div class="span3">
+                        <form>
+                            <input type="text" name="Name" placeholder="Name" class="span3">                           
+                            <input type="email" name="Email" placeholder="Email" class="span3">
+                            <textarea class="span3">comment</textarea>
+                            
+                            <input type="submit" value="Post comment" class="read_more read-more btn btn-primary pull-right">
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

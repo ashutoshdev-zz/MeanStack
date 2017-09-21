@@ -1,0 +1,184 @@
+<li ng-show="!trips.length">No trips have been published</li>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Trips
+            <small>List</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Trips</a></li>
+            <li class="active">Trips List</li>
+        </ol>
+    </section>
+    <div class="form-group">
+        <div class="alert alert-success" ng-show="del">
+            <strong ng-bind="del" ></strong> 
+        </div>
+    </div>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+
+
+
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Trips List</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Sr. no</th>
+                                    <th>Title</th>
+                                    <th>Param</th>
+                                    <th>Description</th>
+                                    <th>Added By</th>
+                                    <th>Created</th>
+                                    <th>Edit</th>
+                                    <th>View</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr ng-repeat='trip in trips track by $index'>
+                                    <td ng-class="'{{trip._id}}'">{{$index + 1}}</td>           
+                                    <td ng-class="'{{trip._id}}'">{{trip.title}}</td>                                   
+                                    <td ng-class="'{{trip._id}}'">{{trip.paramal}}</td>
+                                    <td ng-class="'{{trip._id}}'">{{trip.description.substr(0, 140)}}</td>
+                                    <td ng-class="'{{trip._id}}'">{{trip.user_role}}</td>
+                                    <td ng-class="'{{trip._id}}'">{{trip.created_at | date}}</td>      
+                                    <td ng-class="'{{trip._id}}'"><a ui-sref="editTrip({paraml:trip.paramal})"><i class="fa fa-edit"></i>Edit</a></td>  
+                                    <td ng-class="'{{trip._id}}'" ng-click='setActive(trip)' style="cursor: pointer">View</td> 
+                                    <td ng-click="deletetrip(trip._id)" ng-class="'{{trip._id}}'" style="cursor: pointer">Delete</td>  
+                                </tr>   
+                            </tbody>
+                            <tfoot>
+                                 <tr>
+                                    <th>Sr. no</th>
+                                    <th>Title</th>
+                                    <th>Param</th>
+                                    <th>Description</th>
+                                     <th>Added By</th>
+                                    <th>Created</th>
+                                    <th>Edit</th>
+                                    <th>View</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <div class='col-sm-8 full-height'>
+                        <div ng-show="activeTrip.paramal">
+
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="box">
+                                        <div class="box-header">
+                                            <h3 class="box-title">Single data</h3>
+
+
+                                        </div>
+                                        <!-- /.box-header -->
+                                        <div class="box-body table-responsive no-padding">
+                                            <table class="table table-hover">
+                                                <tr>
+                                                    <th>Fields</th>
+                                                    <th>Data</th>
+
+                                                </tr>
+                                                <tr>
+                                                    <td>Title</td>
+                                                    <td>{{activeTrip.title}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Parma Link</td>
+                                                    <td>{{activeTrip.paramal}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Description</td>
+                                                    <td>{{activeTrip.description}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Image</td>
+                                                    <td><img ng-src="{{activeTrip.tripimg}}"   width="300px;"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Rental Car</td>
+                                                    <td>{{activeTrip.rental_car}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Price/Person</td>
+                                                    <td>{{activeTrip.price_person}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>No. of Travellers</td>
+                                                    <td>{{activeTrip.nooftravellers}}</td>
+                                                </tr>
+                                                 <tr>
+                                                    <td>Location From</td>
+                                                    <td>{{activeTrip.locationfrom}}</td>
+                                                </tr>
+                                                 <tr>
+                                                    <td>Location To</td>
+                                                    <td>{{activeTrip.locationto}}</td>
+                                                </tr>
+                                                   <tr>
+                                                    <td>Start Date</td>
+                                                    <td>{{activeTrip.date}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>End Date</td>
+                                                    <td>{{activeTrip.date_end}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Accommodation</td>
+                                                    <td>{{activeTrip.accommodation}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Accommodation Info</td>
+                                                    <td>{{activeTrip.accommodation_info}}</td>
+                                                </tr>
+                                                 <tr>
+                                                    <td>Gender</td>
+                                                    <td>{{activeTrip.gender}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Category</td>
+                                                    <td>{{activeTrip.category}}</td>
+                                                </tr>
+                                                 <tr>
+                                                    <td>Added By</td>
+                                                    <td>{{activeTrip.user_role}}</td>
+                                                </tr>                                                
+                                                 <tr>
+                                                    <td>Status</td>
+                                                    <td>{{activeTrip.status==0 ? "DeActivate" : "Activate"}}</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <!-- /.box-body -->
+                                    </div>
+                                    <!-- /.box -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</div>
+
+

@@ -1,0 +1,153 @@
+<div class="inner-bg" ng-controller="ProfileCtrl">
+    <div class="smart-container">
+      <div class="container">
+         <div class="heading">
+          <h1>Edit Profile<span></span><h1>        
+        </div>
+              <div class="col-sm-12">
+                <div class="row">
+                  <div class="myprofile">
+                    <div class="col-sm-6">
+                      <div class="profile-img">
+                          
+                         <img ng-src="{{imgshow}}" id="photo-id" ng-show="imgshow"  width=537px"/>
+                      </div>
+ <p ng-show="loading">...UPLOADING...</p>
+                      <div class="form-group ">                    
+                            <div class="upload-btn">                              
+                              <div class="fileUpload btn defult_btn">
+                                  <span>Upload Photo</span>
+                                                                   
+  <input type="file" name="file" onchange="angular.element(this).scope().uploadFile(this)" id="photo-upload" class="upload" />
+                                 
+                              </div>
+                               
+                            </div>
+                          </div>
+
+                    </div>
+
+                      <div class="col-sm-6">
+                      <div class="profile-decsr">
+                  
+                          <form class="form-horizontal" ng-submit="editUser(user)" method="post">
+                          <div class="form-group lin-btm">
+                            <label class="control-label col-sm-2" for="email">First Name:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control bdr-non" name="firstname" ng-model="user.firstname" placeholder="Enter First Name">
+                            </div>
+                          </div>
+                               <div class="form-group lin-btm">
+                            <label class="control-label col-sm-2" for="email">Last Name:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control bdr-non" name="lastname" ng-model="user.lastname" placeholder="Enter Last Name">
+                            </div>
+                          </div>
+                          <div class="form-group lin-btm">
+                            <label class="control-label col-sm-2" for="pwd">Email:</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control bdr-non " ng-model="user.email"   placeholder="Enter Email" readonly="">
+                            </div>
+                          </div>
+
+                                <div class="form-group lin-btm">
+                            <label class="control-label col-sm-2" for="pwd">Phone:</label>
+                            <div class="col-sm-10">
+                              <input type="text" class="form-control bdr-non " name="phone" ng-model="user.phone"   placeholder="Enter Phone">
+                            </div>
+                          </div>
+
+                                <div class="form-group lin-btm">
+                            <label class="control-label col-sm-4" for="pwd">Date of Birth:(DD.MM.YY)</label>
+                            <div class="col-sm-8">
+                              <input type="text" class="form-control bdr-non " name="dob" ng-model="user.dob"  placeholder="Enter DOB">
+                            </div>
+                          </div>
+
+                                <div class="form-group lin-btm">
+                            <label class="control-label col-sm-2" for="pwd">Address:</label>
+                            <div class="col-sm-10">
+                              <input type="text" class="form-control bdr-non"  name="address" ng-model="user.address" placeholder="Enter Address">
+                            </div>
+                          </div>
+     <div class="form-group lin-btm">
+                            <label class="control-label col-sm-5" for="pwd">Your Country:</label>
+                          <div class="col-sm-7">
+                              <span>{{user.country}}</span>
+                            </div>
+                             </div>
+                                <div class="form-group lin-btm">
+                            <label class="control-label col-sm-5" for="pwd">Change your Country:</label>
+                            <div class="col-sm-7">
+                                <select ng-model="user.country" name="country" class="form-control bdr-non" ng-options="country.name for country in countries track by country.code">
+                                <option value="">-- Select a Country --</option>
+                                </select>
+                            </div>
+                            
+                          </div>
+                         
+                          <div class="form-group lin-btm">
+                            <label class="control-label col-sm-5" for="pwd">Government id Number:</label>
+                            <div class="col-sm-7">
+                              <input type="text" class="form-control bdr-non " name="gid" ng-model="user.gin" placeholder="Government ID Number">
+                            </div>
+                          </div>
+
+                          <div class="form-group lin-btm">
+                            <label class="control-label col-sm-5" for="pwd">Passport id Number:</label>
+                            <div class="col-sm-7">
+                              <input type="text" class="form-control bdr-non " name="pin" ng-model="user.pin" placeholder="Enter Passport No.">
+                            </div>
+                          </div>
+
+                          <div class="form-group lin-btm">
+                            <label class="control-label col-sm-12" for="pwd">Id/Passport document:</label>
+                            <div class="col-sm-2">
+                              <div class="fileUpload btn btn-primary">
+                                  <span><i class="fa fa-camera" aria-hidden="true"></i></span>
+                                  <input type="file" class="upload" />
+                              </div>
+                            </div>
+                            <div class="col-sm-10">
+                              <div class="fileUpload btn btn-uplod">
+                                   <span><i class="fa fa-camera" aria-hidden="true"></i></span>
+                                  <input type="file" class="upload" />
+                              </div>
+                            </div>
+                          </div>
+
+                            
+                          <div class="form-group lin-btm">
+                            <label class="control-label col-sm-12" for="pwd">Bank information:</label>
+                            <div class="col-sm-12">
+                              <select class="form-control bdr-non">
+                                <option> Debit/Credit Card </option>
+                                <option> Paypal </option>
+                              </select>
+                            </div>
+                          </div>
+                             <div class="form-group ">
+                                 <p ng-show="update" class="danger">{{update}}</p>
+                             </div>
+                          <div class="form-group ">                    
+                            <div class="update-btn">
+                                 
+                                 <input type="submit" name="submit" class="btn defult_btn" value="Update">
+                            </div>
+                          </div>
+
+
+                              
+                        
+                        </form> 
+                      </div>
+
+                    </div>
+                    </div>
+                </div>
+
+              </div>
+
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,61 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Page
+            <small>Add Page</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="/admin/dashboard#/userList"><i class="fa fa-dashboard"></i> Page</a></li>
+            <li class="active">Add Page</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-11">
+                <!-- general form elements -->
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Add Page</h3>
+                    </div>
+                    <div class="form-group">
+                        <div class="alert alert-success" ng-show="message">
+                            <strong ng-bind="message" ></strong> 
+                        </div>
+                    </div>
+                    <form method="post"  ng-submit="addPage(page)">
+                        <div class="box-body">
+                            <div class='col-lg-8'>
+                                <div class='form-group'>
+                                    <input type='text' placeholder='Title' ng-model='page.title' required="" name='title' class='form-control'>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-8">
+                                <div class='form-group'>                                   
+                                    <select name="category" class="form-control" ng-model='page.role' required="">    
+                                        <option value="">--Select Page Role--</option>
+                                        <option ng-repeat="data in role">{{data}}</option>                                      
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-8 full-height">
+                                <div class='form-group'>
+                                    <textarea required="" class="form-control full-height" id="pad" ng-model='page.description' name="description" placeholder='Write your description'></textarea>
+                                    <div class="col-md-6 full-height" id="markdown">
+                                        <div btf-markdown='page.description'></div>
+                                    </div>
+                                </div>
+                            </div>
+      
+                            <div class="col-lg-8">
+                                <input type="submit" value="Publish Page" name="submit"  class="btn btn-success pull-right">                               
+                            </div>
+                        </div>
+                    </form>
+                    
+                </div>                
+            </div>
+        </div>
+    </section>
+</div>

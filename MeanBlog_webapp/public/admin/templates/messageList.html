@@ -1,0 +1,119 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Messages
+            <small>List</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Messages</a></li>
+            <li class="active">Messages List</li>
+        </ol>
+    </section>
+    <div class="form-group">
+        <div class="alert alert-success" ng-show="del">
+            <strong ng-bind="del" ></strong> 
+        </div>
+    </div>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+
+
+
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Messages List</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Sr. no</th>                                    
+                                    <th>Email</th>
+                                    <th>Name</th>
+                                    <th>Message</th>
+                                    <th>Created</th>
+                                    <th>View</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr ng-repeat='message in messages track by $index'>
+                                    <td ng-class="'{{message._id}}'">{{$index + 1}}</td>                                              
+                                    <td ng-class="'{{message._id}}'">{{message.email}}</td>
+                                    <td ng-class="'{{message._id}}'">{{message.name}}</td>                                   
+                                    <td ng-class="'{{message._id}}'">{{message.message}}</td>
+                                    <td ng-class="'{{message._id}}'">{{message.created_at | date}}</td>                                        
+                                    <td ng-class="'{{message._id}}'" ng-click='setActive(message)' style="cursor: pointer"> View</td> 
+                                    <td ng-click="deletemessage(message._id)" ng-class="'{{message._id}}'"  style="cursor: pointer">Delete</td>       
+                                </tr>                                
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Sr. no</th>                                    
+                                    <th>Email</th>
+                                    <th>Name</th>
+                                    <th>Message</th>
+                                    <th>Created</th>
+                                    <th>View</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class='col-sm-8 full-height'>
+                        <div ng-show="activemsg.email">
+
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="box">
+                                        <div class="box-header">
+                                            <h3 class="box-title">Single data</h3>
+
+
+                                        </div>
+                                        <!-- /.box-header -->
+                                        <div class="box-body table-responsive no-padding">
+                                            <table class="table table-hover">
+                                                <tr>
+                                                    <th>Fields</th>
+                                                    <th>Data</th>
+
+                                                </tr>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>{{activemsg.name}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Email</td>
+                                                    <td>{{activemsg.email}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Message</td>
+                                                    <td>{{activemsg.message}}</td>
+                                                </tr>
+                           
+                                            </table>
+                                        </div>
+                                        <!-- /.box-body -->
+                                    </div>
+                                    <!-- /.box -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</div>

@@ -1,0 +1,72 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Post
+            <small>Edit Post</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="/admin/dashboard#/userList"><i class="fa fa-dashboard"></i> Post</a></li>
+            <li class="active">Edit Post</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-11">
+                <!-- general form elements -->
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Add Post</h3>
+                    </div>
+                    <div class="form-group">
+                        <div class="alert alert-success" ng-show="update">
+                            <strong ng-bind="update" ></strong> 
+                        </div>
+                    </div>
+                    <div class='form-group'>
+                        <div class='form-group'>
+                            <input type='text' placeholder='Title' ng-model='post.title' name='title' class='form-control'>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type='text' placeholder='Parramlink' ng-model='post.paramal' name='paramlink' class='form-control' disabled="">
+                    </div>
+
+                    <div class="form-group">
+                        <textarea class="col-md-8" ng-model='post.metadescription' placeholder='Write your metadescription'></textarea>        
+                    </div>
+                    <div class="form-group">
+                        <textarea class="col-md-8" ng-model='post.metakeywords' placeholder='Write your metakeywords'></textarea>        
+                    </div>
+
+                    <div class="form-group">
+                        <input type='hidden' placeholder='blog' ng-model='post.id' name='id' class='form-control'>
+
+                    </div>
+                    <div class="form-group full-height">
+                        <textarea class="form-control full-height" id="pad" ng-model='post.description' name="description" placeholder='Write your description'></textarea>
+                        <div class="col-md-8 full-height" id="markdown">
+                            <div btf-markdown='post.description'></div>
+                        </div>
+                    </div>                    
+                    <div class='form-group'>
+                        <select name="category" class="form-control" ng-model='post.category' required="">                              
+                            <option ng-repeat="data in cat">{{data.name}}</option>    
+                        </select>
+                    </div>
+                     <img ng-src="{{imgshow}}"  width="300px;"/>
+                    <div class="form-group">
+                         <input type="file" name="file" onchange="angular.element(this).scope().uploadFile(this)" id="photo-upload"  required=""/>                               
+                    </div>  
+                       <p ng-show="loading">...UPLOADING...</p>
+                    <div class="form-group">
+                        <div class='btn btn-success pull-right' ng-click='editPost()'>Publish Post</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>

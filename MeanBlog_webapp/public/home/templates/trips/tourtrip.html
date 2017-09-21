@@ -1,0 +1,147 @@
+<div class="inner-bg" ng-controller="TourtripCtrl">
+    <div class="smart-container">
+        <div class="container">
+            <div class="col-sm-12">
+                <div class="heading">
+                    <h1>Tour Guide / Travel agency page<span></span></h1>        
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="row">
+
+                    <div class="myprofile tourguide">
+
+                        <form class="form-horizontal" ng-submit="addTrip(trip)">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="TITLE">TRIP TITLE :</label>
+                                    <div class="col-sm-8">
+                                        <input type='text' placeholder='Title' ng-model='trip.title' required="" name='title' class='form-control'>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="pwd">DESCRIPTION :</label>
+                                    <div class="col-sm-8">          
+                                        <textarea required="" class="form-control full-height" id="pad" ng-model='trip.description' name="description" placeholder='Write your description'></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group" ng-show="TraTour_HS">
+                                    <label class="control-label col-sm-4" for="gen">WHO YOU ARE?</label>
+                                    <div class="col-sm-8">    
+                                        <select name="gender" class="form-control" ng-model='trip.user_role' name="user_role" required="">             
+                                            <option value="">--Select who you are?--</option>
+                                            <option value="tourguide" >TOUR GUIDE/ TRAVEL AGENCY</option> 
+                                        </select>
+                                    </div>
+                                </div>
+                                <!--                                                <div class="form-group">
+                                                                                    <label class="control-label col-sm-4" for="gen">GENDER OF TRAVELERS :</label>
+                                                                                    <div class="col-sm-8">    
+                                                                                        <select name="gender" class="form-control" ng-model='trip.gender' name="gender" required="">    
+                                                                                            <option value="">--Select Gender--</option>
+                                                                                            <option value="male">Male</option>
+                                                                                            <option value="female">Female</option> 
+                                                                                            <option value="both">Both</option> 
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>                                                -->
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="gen"> TRIP CATEGORY :</label>
+                                    <div class="col-sm-8">    
+                                        <select name="category" class="form-control" ng-model='trip.category' name="category" required="">    
+                                            <option value="">--Select Category--</option>
+                                            <option ng-repeat="data in cat">{{data.name}}</option>                                      
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="pwd">UPLOAD IMAGES :</label>
+
+                                    <div class="col-lg-8 full-height">                                                     
+                                        <img ng-src="{{imgshow}}" id="photo-id" ng-show="imgshow" width="300px;"/>
+                                        <input type="file" name="file" onchange="angular.element(this).scope().uploadFile(this)" id="photo-upload"  required=""/>
+                                        <p ng-show="loading">...UPLOADING...</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="frm">LOCATION :</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" required="" id="frm"  ng-model='trip.locationfrom' placeholder="FROM" name="locationfrom">
+                                        <input type="text" class="form-control" required="" id="frm" ng-model='trip.locationto' placeholder="TO" name="locationto">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="date">Start DATE :</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" ng-model='trip.date'required="" id="datepicker" placeholder="SELECT DATE" name="date">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="date">End DATE :</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" ng-model='trip.date_end' required="" id="datepicker2" placeholder="SELECT DATE" name="date_end">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="price">PRICE/PERSON :</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" ng-model='trip.price_person' required="" id="price" placeholder="$200" name="price_person">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="TRAVELERS">Notes :</label>
+                                    <div class="col-sm-8">
+                                        <input type='text' placeholder='Notes' ng-model='trip.notes' required="" name='notes' class='form-control'>
+                                    </div>
+                                </div>
+                                <!--                                                <div class="form-group">
+                                                                                    <label class="control-label col-sm-4" for="TRAVELERS">NUMBER OF TRAVELERS NEEDED :</label>
+                                                                                    <div class="col-sm-8">
+                                                                                        <input type='text' placeholder='No. of Travellers' ng-model='trip.nooftravellers' required="" name='nooftravellers' class='form-control'>
+                                                                                    </div>
+                                                                                </div>-->
+                                <!--                                                <div class="form-group">
+                                                                                    <label class="control-label col-sm-4" for="ACCOMMODATION">ACCOMMODATION :</label>
+                                                                                    <div class="col-sm-8">
+                                                                                        <input type="text" class="form-control" ng-model='trip.accommodation' required="" name='accommodation' placeholder="SELECT HOTEL">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="control-label col-sm-4" for="info">ACCOMMODATION INFO :</label>
+                                                                                    <div class="col-sm-8">
+                                
+                                                                                        <textarea class="form-control" id="info" placeholder="ENTER HOTEL DESCRIPITON" required="" ng-model='trip.accommodation_info' name="accommodation_info"> </textarea>
+                                                                                    </div>
+                                                                                </div>-->
+                                <!--                                                <div class="form-group">
+                                                                                    <label class="control-label col-sm-4" for="info">RENTEL CAR :</label>
+                                                                                    <div class="col-sm-8">
+                                                                                        <select name="rental_car" class="form-control" ng-model='trip.rental_car' required="">    
+                                                                                            <option value="">--Select Rental Car--</option>
+                                                                                            <option value="yes">Yes</option>
+                                                                                            <option value="no">No</option> 
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>-->
+                                <div class="form-group">        
+                                    <div class="col-sm-offset-4 col-sm-8">
+                                        <input type="submit" name="posttrip" value="Submit" class="btn btn-primary btn btn-info">
+                                    </div>
+                                </div>
+                                <div class="alert alert-success" ng-show="message">
+                                    <strong ng-bind="message" ></strong> 
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

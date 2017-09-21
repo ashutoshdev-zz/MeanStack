@@ -1,0 +1,45 @@
+<main class="st-wrapper">
+    <header class="st-header home-header">
+        <div class="bg-nav">
+            <div class="container">
+                <nav class="navbar navbar-default navbar-fixed st-menu ">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                            <a class="navbar-brand" href="#"><img src="home/scss/images/logo.png" alt="Logo"></a> </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="triplist" >Where to next?</a></li>
+                                  <li ng-if="!currentUser.email">
+                                    <a data-toggle="modal" data-target="#myModalsigup"> Create a Trip</a>
+                                </li>
+                                <li ng-if="currentUser.email">
+                                    <a ng-click="tripPopUp()"> Create a Trip</a>
+                                </li>                                    
+                                <li class="active" ng-if="currentUser.email">                                    
+                                    <a href="/home">Myprofile</a>
+                                </li>                                
+                                <li ng-if="currentUser.email"><a href="/home/logout" >Logout</a></li>
+                                
+                                <li class="active" ng-if="!currentUser.email">                                    
+                                    <a href="#"  data-toggle="modal" data-target="#myModalsigup"> Sign Up</a>
+                                </li>
+                                <li ng-if="!currentUser.email"><a href="#"  data-toggle="modal" data-target="#myModal">Login</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!--- Banner content  Starts-->
+                <div class="banner-content">
+                    <h1>Journeys are better together</h1>
+                    <h2>You’re nevera far from a Slugr in Rome
+                        find and view our carsharing locations in real time with the Slugr</h2>
+
+                </div>
+
+                <!--- Banner content Ends  -->
+            </div>
+        </div>
+        <div class="bg-banner"></div>
+        <div class="clr"></div>
+    </header><!-- Header Section End Here -->
